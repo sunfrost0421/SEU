@@ -1,0 +1,4 @@
+cap
+res
+vcc
+gnd
