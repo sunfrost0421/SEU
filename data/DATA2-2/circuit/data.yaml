@@ -1,0 +1,5 @@
+train: ../circuit/train/images
+val: ../circuit/valid/images
+
+nc: 15
+names: ['trans', 'bridge', 'res1', 'triode', 'gnd', 'power1', 'res2', 'cap1', 'diode', 'cap2', 'mos', 'switch', 'amplifier', 'inductance', 'power2']
