@@ -3,6 +3,7 @@ import torch
 
 imgs_path = "D:\\workplace\\data\\newdata"
 imgs_list = os.listdir(imgs_path)  # 返回一个文件夹内容的列表
+imgs_list.sort()
 print(imgs_list)
 index = 1
 for img in imgs_list:

@@ -5,7 +5,7 @@ import os
 import torchvision.transforms as transforms
 
 import numpy as np
-imgs_path = "D:\workplace\qrc\picture\images"
+imgs_path = ".\images"
 imgs_list = os.listdir(imgs_path)  # 返回一个文件夹内容的列表
 print(imgs_list)
 img1_path = os.path.join(imgs_path,imgs_list[0])
@@ -23,7 +23,7 @@ print(gray)
 # 大律法,全局自适应阈值 参数0可改为任意数字但不起作用
 ret, binary = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY)
 print(ret)
-cv2.imshow("binary", binary)
+cv2.imshow("binary", binary)  # 二值化之后黑色为0 白色为255
 cv2.waitKey(0) #等待按键
 cv2.imwrite("./images/binary.PNG", binary)
 print(binary)
