@@ -182,7 +182,7 @@ def nets_analyse(w_img_path, option="segment"):
     ''' 分析一张图片的所有网络
 
     :param w_img_path:
-    :param option:
+    :param option:“segment”可以分割出所有网络的图片保存在subnet中，show可以展示网络分析的图片
     :return:
     '''
     img = cv2.imread(w_img_path,0)
@@ -214,6 +214,9 @@ def nets_analyse(w_img_path, option="segment"):
         output = np.zeros((img.shape[0], img.shape[1], 3), np.uint8)
         for i in range(1, num_labels):
             mask = labels == i
+            # output[:, :, 0][mask] = np.random.randint(0, 255)
+            # output[:, :, 1][mask] = np.random.randint(0, 255)
+            # output[:, :, 2][mask] = np.random.randint(0, 255)
             if i in map_.keys():
                 output[:, :, 0][mask] = np.random.randint(0, 255)
                 output[:, :, 1][mask] = np.random.randint(0, 255)
@@ -285,16 +288,26 @@ def creat_netlist(box_dir, net_dir):
     net_list = os.listdir(net_dir)
     name = Path(box_dir).stem  # 这张图片的名字0001
     netlist = TEST_PATH + "\\netlist\\" + name + ".net"
+    head = name + ".TITLE\n\n"
+    f = open(netlist, "w")  # w 表示如果文件不存在创建，如果文件存在重新写入
+    f.write(head)
+    f.close()
 
+    fa = open(netlist, "a")  # a 表示在文件后面继续输入
 
     for b in box_list:
-
+        b_name = Path(b).stem.title()
+        fa.write(b_name.title() + " ")
         box = cv2.imread(box_dir + "\\" + b, 0)
         for n in net_list:
-
+            n_name = Path(n).stem
             net = cv2.imread(net_dir + "\\" + n, 0)
             if is_connected(box, net):
                 print(f"{b}--->{n}")
+                fa.write(n_name.title() + " ")
+        fa.write("\n")
+    fa.write(".END")
+    fa.close()
     print("success")
 
 def get_all_test_netlist():

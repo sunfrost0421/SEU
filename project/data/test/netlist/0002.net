@@ -1,0 +1,9 @@
+0002.TITLE
+
+Diode_1 Net1 Net3 
+Diode_2 Net1 Net4 
+Power2_1 Net2 Net5 
+Res1_1 Net4 Net5 
+Res1_2 Net3 Net5 
+Res2_1 Net1 Net2 
+.END

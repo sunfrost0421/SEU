@@ -16,10 +16,10 @@ white = ".\\data\\test\\white\\w_0002.jpg"
 #         os.remove(box_sub_dir + "\\" + x)
 
 # tools.yolo_txt_to_box(img, lab)
-# tools.nets_analyse(white,"show")
+tools.nets_analyse(white,"show")
 
 
-tools.get_all_test_box()
-tools.make_all_test_box_white()
-tools.get_all_test_img_nets()
-tools.get_all_test_netlist()
+# tools.get_all_test_box()
+# tools.make_all_test_box_white()
+# tools.get_all_test_img_nets()
+# tools.get_all_test_netlist()

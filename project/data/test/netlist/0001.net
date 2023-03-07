@@ -1,0 +1,7 @@
+0001.TITLE
+
+Cap1_1 Net1 Net2 
+Gnd_1 Net2 
+Res2_1 Net1 Net2 
+Res2_2 Net1 Net2 
+.END

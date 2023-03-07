@@ -69,7 +69,7 @@ def count_yolo_data(path, classList):
     print(f"valid_dir:{valid_dir}")
     
 
-data_path = "C:\\Users\\a\\Desktop\\circuit"
+data_path = "C:\\Users\\qrc\\Desktop\\newdata"
 classList = ['trans', 'bridge', 'res1', 'triode', 'gnd', 'power1', 'res2', 'cap1', 'diode', 'cap2', 'mos', 'switch', 'amplifier', 'inductance', 'power2']
 count_yolo_data(data_path,classList)
 
